@@ -16,6 +16,7 @@ import UserDropdown from "./UserDropdown";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Store } from "lucide-react";
 import TopHeaderBadge from "./TopHeaderBadge";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const ClientHeader = () => {
   const { user, loading } = useAuthStore();
@@ -140,6 +141,7 @@ const ClientHeader = () => {
             <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 shrink-0">
               {/* Desktop Actions */}
               <div className="hidden lg:flex items-center gap-4">
+                <LanguageSwitcher />
                 <CartIcon />
                 <FavoriteButton />
                 <NotificationBell />
@@ -191,6 +193,7 @@ const ClientHeader = () => {
 
               {/* Tablet Actions */}
               <div className="hidden md:flex lg:hidden items-center gap-2">
+                <LanguageSwitcher />
                 <CartIcon />
                 <FavoriteButton />
                 <NotificationBell />
