@@ -8,8 +8,6 @@ import AnalyticsProvider from "@/components/AnalyticsProvider";
 import ShareSidebar from "@/components/ShareSidebar";
 import PurchaseFloatingButton from "@/components/PurchaseFloatingButton";
 import CartAddedModal from "@/components/CartAddedModal";
-import { I18nProvider } from "@/lib/i18n";
-import idTranslations from "@/lib/i18n/dictionaries/id.json";
 import "./globals.css";
 
 const jost = Jost({
@@ -94,31 +92,29 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="id">
+    <html lang="en">
       <body className={`${jost.variable} antialiased`}>
-        <I18nProvider translations={idTranslations} initialLocale="id">
-          <AuthInitializer />
-          <AnalyticsProvider />
-          <ShareSidebar />
-          {children}
-          <PurchaseFloatingButton />
-          <CartAddedModal />
-          <Toaster
-            position="bottom-right"
-            richColors
-            closeButton
-            toastOptions={{
-              style: {
-                background: "#ffffff",
-                color: "#1f2937",
-                border: "1px solid #e5e7eb",
-                borderRadius: "8px",
-                fontSize: "14px",
-              },
-              className: "sonner-toast",
-            }}
-          />
-        </I18nProvider>
+        <AuthInitializer />
+        <AnalyticsProvider />
+        <ShareSidebar />
+        {children}
+        <PurchaseFloatingButton />
+        <CartAddedModal />
+        <Toaster
+          position="bottom-right"
+          richColors
+          closeButton
+          toastOptions={{
+            style: {
+              background: "#ffffff",
+              color: "#1f2937",
+              border: "1px solid #e5e7eb",
+              borderRadius: "8px",
+              fontSize: "14px",
+            },
+            className: "sonner-toast",
+          }}
+        />
       </body>
     </html>
   );
